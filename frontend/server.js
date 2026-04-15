@@ -3,8 +3,8 @@ const axios = require("axios");
 
 const app = express();
 
-// ✅ FIXED BACKEND URL (use your actual IP)
-const BACKEND_URL = "http://172.21.93.221:5000";
+// ✅ Correct backend URL (EC2)
+const BACKEND_URL = "http://18.61.71.139:5000";
 
 app.get("/", async (req, res) => {
     try {
@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {
 
         res.send(html);
     } catch (error) {
-        console.error(error.message); // 👈 helps debug
+        console.error(error.message);
         res.send("Error connecting to backend");
     }
 });
